@@ -173,7 +173,7 @@
       margin-bottom: 15px;
     }
 
-    /* Filter Buttons for 40 Photos */
+    /* Filter Buttons for 43 Photos */
     .filter-container {
       display: flex;
       justify-content: center;
@@ -421,20 +421,17 @@
       </button>
     </div>
 
-    <!-- Filterable 40-Photo Gallery -->
+    <!-- Filterable 43-Photo Gallery -->
     <h2 class="section-title">Memories & Moments 📸</h2>
     
     <div class="filter-container">
-      <button class="filter-btn active" onclick="filterGallery('all')">All Memories (40)</button>
+      <button class="filter-btn active" onclick="filterGallery('all')">All Memories (43)</button>
       <button class="filter-btn" onclick="filterGallery('aesthetic')">Aesthetic 🌸</button>
       <button class="filter-btn" onclick="filterGallery('silly')">Cute & Silly ✨</button>
       <button class="filter-btn" onclick="filterGallery('adventures')">Adventures 💕</button>
     </div>
 
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- Generated 40 Polaroid Cards -->
-      <!-- Place your 40 photos as photo1.jpg to photo40.jpg in your project folder! -->
-    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
 
     <!-- Heartfelt Indirect Proposal Letter Card -->
     <h2 class="section-title">A Letter For You ✉️</h2>
@@ -469,10 +466,10 @@
     <div class="modal-content">
       <span class="close-btn" onclick="closeSurprise()">&times;</span>
       <h2 style="font-family: 'Dancing Script', cursive; color: var(--deep-pink); font-size: 2.2rem; margin-bottom: 10px;">Surprise! 🎉</h2>
-      <p style="color: var(--text-color); margin-bottom: 15px;">ಎಣಿಸದೆ ದಿನಗಳುರುಳಿ ವರುಷಗಳೆ ಕಳೆಯಿತು ಬಾಳ ಪಯಣದಲಿ ಸಾಗುತ ನಿನ್ನೊಂದಿಗೆ... 
-ಬರುವ ವರುಷವೂ ಕಳೆಯಲಿ ದಿನಗಳಂತೆ 
-ನೀನಿರುವಾಗ ನನ್ನೊಂದಿಗೆ...
-ಜೀವದೊಡತಿಯೆ ಕೇಳು‌ ಜೀವವೇ ಧಾರೆ ಎರೆದು
+      <p style="color: var(--text-color); margin-bottom: 15px;">ಎಣಿಸದೆ ದಿನಗಳುರುಳಿ ವರುಷಗಳೆ ಕಳೆಯಿತು ಬಾಳ ಪಯಣದಲಿ ಸಾಗುತ ನಿನ್ನೊಂದಿಗೆ...<br>
+ಬರುವ ವರುಷವೂ ಕಳೆಯಲಿ ದಿನಗಳಂತೆ<br> 
+ನೀನಿರುವಾಗ ನನ್ನೊಂದಿಗೆ...<br>
+ಜೀವದೊಡತಿಯೆ ಕೇಳು‌ ಜೀವವೇ ಧಾರೆ ಎರೆದು<br>
 ಮೌನಿಯಾಗಿ ನಿಂತು ಬಿಡುವೆ ನಿನ್ನೆದುರಿಗೆ....</p>
       <p style="font-size: 2rem;">🎂✨🌸</p>
     </div>
@@ -482,7 +479,6 @@
   <audio id="bgMusic" loop src="./WhatsApp Audio 2026-08-01 at 4.33.02 PM.mp3"></audio>
 
   <script>
-    // Photo Data Structure for 40 photos
     const captions = [
       "Best Smiles ✨", "Unforgettable Days 🌸", "Stay Awesome 💕", "Pure Sunshine ☀️",
       "Cutest Moments 💖", "Making Memories 🌷", "Golden Hour Vibe ✨", "Unstoppable Laughs 🎉",
@@ -493,13 +489,14 @@
       "Lovely Soul 🌷", "Dreamy Mood ✨", "Happy Soul 💕", "Making Life Sweet 🌸",
       "Best Time Ever 🎉", "So Cute! 🎀", "Golden Moments ✨", "Smile Girl 💖",
       "Gombii Moments 🌷", "Sparkle Always ✨", "Happy Vibes 🌸", "Favorite Person 💕",
-      "Creating Memories 💖", "Always Magical ✨", "Best Memory Ever 🌸", "Cheers to You! 🎉"
+      "Creating Memories 💖", "Always Magical ✨", "Best Memory Ever 🌸", "Cheers to You! 🎉",
+      "Sweet Friend 💕", "Precious Smiles ✨", "Forever Special 🌸"
     ];
 
     const categories = ['aesthetic', 'silly', 'adventures'];
     const photoData = [];
 
-    // Dynamically generate 40 photo objects
+    // Dynamically generate 43 photo objects
     for (let i = 1; i <= 43; i++) {
       photoData.push({
         id: i,
@@ -509,7 +506,7 @@
       });
     }
 
-    // Render 40 Photo Cards into Grid
+    // Render 43 Photo Cards into Grid
     const galleryGrid = document.getElementById('galleryGrid');
 
     photoData.forEach((photo, index) => {
@@ -567,7 +564,7 @@
       imgElem.onerror = function() {
         this.src = 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=500&auto=format&fit=crop';
       };
-      document.getElementById('lightboxCaption').innerText = `${photo.caption} (${currentPhotoIndex + 1}/40)`;
+      document.getElementById('lightboxCaption').innerText = `${photo.caption} (${currentPhotoIndex + 1}/${photoData.length})`;
     }
 
     // Create background floating hearts
